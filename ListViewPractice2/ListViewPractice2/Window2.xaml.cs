@@ -92,6 +92,7 @@ namespace ListViewPractice2
             {
                 MessageBox.Show($"There is an issue with this file ==> {DATAFILE} ");
             }
+            
             if (corrupted) MessageBox.Show("One or more record(s) didn't load! because they are coruppted!");
             corrupted = false;
             
@@ -147,6 +148,7 @@ namespace ListViewPractice2
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             var itemsToDelete = lvShow.SelectedItems;
+            
             foreach(MyTask task in itemsToDelete)
             {
                 tasks.Remove(task);
@@ -163,7 +165,7 @@ namespace ListViewPractice2
             string status = comboStatus.Text;
             int diff;
             var cultureInfo = new CultureInfo("en-CA");
-            if (DateTime.TryParseExact(tBoxDate.Text, "yyyy-mm-dd", cultureInfo,
+            if (DateTime.TryParseExact(tBoxDate.Text, "yyyy-MM-DD", cultureInfo,
                                  DateTimeStyles.None, out date))
             {
                 if (int.TryParse(slideDiff.Value.ToString(), out diff)) {

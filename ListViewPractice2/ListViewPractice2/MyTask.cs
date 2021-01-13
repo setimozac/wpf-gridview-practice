@@ -44,7 +44,7 @@ namespace ListViewPractice2
         {
             get
             {
-                return _due.Date();
+                return _due;
             }
             set
             {
